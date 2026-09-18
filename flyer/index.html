@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flyer — Sumate a GAGA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #fbf4e8;
+        --panel: #ffffff;
+        --ink: #25201a;
+        --sun: #f0a63a;
+        --sun-dark: #d9862a;
+        --sky: #6fa789;
+        --line: #e7dcc6;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Nunito", sans-serif;
+        display: flex;
+        justify-content: center;
+        padding: 28px 14px;
+      }
+      .sheet {
+        width: 100%;
+        max-width: 620px;
+        background: var(--panel);
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 30px 60px -30px rgba(37, 32, 26, 0.35);
+        border: 1px solid var(--line);
+      }
+
+      .top {
+        background: var(--sun);
+        padding: 38px 36px 60px;
+        position: relative;
+        overflow: hidden;
+      }
+      .top::after {
+        content: "";
+        position: absolute;
+        right: -40px;
+        top: -40px;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+      }
+      .eyebrow {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.03em;
+        color: #5a3c10;
+        margin-bottom: 14px;
+      }
+      h1 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: 1.05;
+        margin: 0 0 14px;
+        color: #2e1f0a;
+      }
+      .top p {
+        font-size: 1.05rem;
+        max-width: 38ch;
+        margin: 0;
+        color: #3e2a0d;
+      }
+
+      .curtain-illustration {
+        position: relative;
+        margin-top: -34px;
+        padding: 0 36px;
+      }
+      .curtain-illustration svg {
+        width: 100%;
+        display: block;
+        filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.12));
+      }
+
+      .body {
+        padding: 8px 36px 36px;
+      }
+
+      .pitch {
+        font-size: 1.05rem;
+        line-height: 1.55;
+        margin: 26px 0 30px;
+      }
+      .pitch strong {
+        color: var(--sun-dark);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+        margin-bottom: 30px;
+      }
+      .card {
+        background: var(--cream);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px 18px;
+      }
+      .card .emoji {
+        font-size: 1.5rem;
+        display: block;
+        margin-bottom: 8px;
+      }
+      .card h3 {
+        font-family: "Space Grotesk", sans-serif;
+        margin: 0 0 4px;
+        font-size: 0.98rem;
+      }
+      .card p {
+        margin: 0;
+        font-size: 0.87rem;
+        color: #5c5245;
+      }
+
+      .no-experience {
+        background: var(--sky);
+        color: #fff;
+        border-radius: 18px;
+        padding: 20px 24px;
+        font-size: 1rem;
+        margin-bottom: 32px;
+        line-height: 1.5;
+      }
+      .no-experience b {
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      .cta {
+        background: var(--ink);
+        color: var(--cream);
+        border-radius: 20px;
+        padding: 28px 26px;
+        text-align: center;
+      }
+      .cta p.lead {
+        margin: 0 0 16px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        font-family: "Space Grotesk", sans-serif;
+      }
+      .cta a.mail {
+        display: inline-block;
+        max-width: 100%;
+        background: var(--sun);
+        color: #2e1f0a;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        padding: 5px;
+        border-radius: 14px;
+        margin-bottom: 10px;
+        word-break: break-all;
+        overflow-wrap: break-word;
+      }
+      .cta .who {
+        font-size: 0.85rem;
+        color: #c9c2b4;
+      }
+
+      footer {
+        text-align: center;
+        padding: 22px 20px 0;
+        font-size: 0.78rem;
+        color: #8c8270;
+      }
+
+      @media (max-width: 420px) {
+        h1 {
+          font-size: 2rem;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .cta {
+          padding: 5px;
+        }
+        .cta a.mail {
+          font-size: 0.92rem;
+          padding: 5px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .cta a.mail {
+          font-size: 0.8rem;
+        }
+        .cta {
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="sheet">
+      <div class="top">
+        <div class="eyebrow">EPET N° 30 · TALLER ABIERTO</div>
+        <h1>Sumate a construir la cortina automática del aula</h1>
+        <p>
+          Un proyecto real, hecho por estudiantes, para resolver algo que pasa
+          todos los días en el aula de Programación.
+        </p>
+      </div>
+
+      <div class="curtain-illustration">
+        <svg viewBox="0 0 560 160" xmlns="http://www.w3.org/2000/svg">
+          <rect
+            x="4"
+            y="4"
+            width="552"
+            height="152"
+            rx="18"
+            fill="#fffaf0"
+            stroke="#e7dcc6"
+          />
+          <line
+            x1="60"
+            y1="34"
+            x2="500"
+            y2="34"
+            stroke="#c7bfa9"
+            stroke-width="4"
+            stroke-linecap="round"
+          />
+          <circle cx="60" cy="34" r="6" fill="#c7bfa9" />
+          <circle cx="500" cy="34" r="6" fill="#c7bfa9" />
+          <path
+            d="M68 36 L68 128 L210 128 L210 36 Z"
+            fill="#f0a63a"
+            opacity="0.85"
+          />
+          <path
+            d="M76 36 Q84 82 76 128"
+            stroke="#d9862a"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M100 36 Q108 82 100 128"
+            stroke="#d9862a"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M124 36 Q132 82 124 128"
+            stroke="#d9862a"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M148 36 Q156 82 148 128"
+            stroke="#d9862a"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M172 36 Q180 82 172 128"
+            stroke="#d9862a"
+            stroke-width="2"
+            fill="none"
+          />
+          <path
+            d="M196 36 Q200 82 196 128"
+            stroke="#d9862a"
+            stroke-width="2"
+            fill="none"
+          />
+          <g stroke="#ffd28a" stroke-width="3" stroke-linecap="round">
+            <line x1="240" y1="52" x2="470" y2="52" />
+            <line x1="240" y1="72" x2="470" y2="72" />
+            <line x1="240" y1="92" x2="470" y2="92" />
+            <line x1="240" y1="112" x2="470" y2="112" />
+          </g>
+          <g transform="translate(475,18)">
+            <rect x="0" y="0" width="30" height="18" rx="4" fill="#6fa789" />
+            <circle cx="15" cy="9" r="3" fill="#fffaf0" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="body">
+        <p class="pitch">
+          Se llama <strong>GAGA</strong> y busca automatizar la cortina para que
+          se abra y se cierre sola, sin depender de que alguien se acuerde de
+          correrla. Todavía no está definido cómo se va a hacer —
+          <strong>eso lo decidimos entre todos</strong>: qué motor, qué
+          mecanismo, qué placa, qué diseño.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <span class="emoji">🔧</span>
+            <h3>Mecanismos</h3>
+            <p>Poleas, engranajes, correas: pensar cómo se mueve la cortina.</p>
+          </div>
+          <div class="card">
+            <span class="emoji">🔌</span>
+            <h3>Electrónica</h3>
+            <p>ESP32, Arduino, sensores, motores y cableado.</p>
+          </div>
+          <div class="card">
+            <span class="emoji">💻</span>
+            <h3>Programación</h3>
+            <p>El código que controla todo el sistema.</p>
+          </div>
+          <div class="card">
+            <span class="emoji">🖨️</span>
+            <h3>Diseño y 3D</h3>
+            <p>Piezas propias, impresas o fabricadas en el taller.</p>
+          </div>
+        </div>
+
+        <div class="no-experience">
+          <b>¿No sabés nada de electrónica o programación?</b> No hace falta
+          saber para empezar. Hay lugar en todas las áreas y se aprende
+          haciendo, en equipo.
+        </div>
+
+        <div class="cta">
+          <p class="lead">¿Te copa la idea? Escribinos.</p>
+          <a
+            class="mail"
+            href="mailto:halarcon@epet12smandes.edu.ar?subject=Quiero%20sumarme%20a%20GAGA"
+            >halarcon@epet12smandes.edu.ar</a
+          >
+          <div class="who">Cristian Alarcón — coordinación del proyecto</div>
+        </div>
+      </div>
+
+      <footer>PROYECTO GAGA — Aula de Programación, EPET N° 30</footer>
+    </div>
+  </body>
+</html>
